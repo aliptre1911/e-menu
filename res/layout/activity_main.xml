@@ -1,7 +1,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
     android:background="@drawable/p480x800"
     android:orientation="vertical"
     tools:context=".MainActivity" >
@@ -11,7 +11,6 @@
     <RelativeLayout
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="5"
         android:background="@drawable/top_u_01" >
 
         <Button
@@ -19,46 +18,33 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
-            android:layout_marginBottom="10px"
-            android:layout_marginLeft="10px"
             android:background="@drawable/btn_mainmenu"
-            android:text="@string/mainMenu"
+            android:text="@string/mainMenu" 
             android:textColor="#FFFFFF"
-            android:textSize="14px" />
+            android:textSize="12sp" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignBaseline="@+id/btn_mainMenu"
-            android:layout_alignBottom="@+id/btn_mainMenu"
-            android:layout_centerHorizontal="true"
-            android:layout_marginBottom="5sp"
-            android:gravity="center"
+            android:layout_centerInParent="true"
             android:text="@string/preselectedMeals"
             android:textColor="#FFFFFF"
-            android:textSize="24sp" />
+            android:textSize="26sp" />
     </RelativeLayout>
 
     <!-- 圖片 -->
 
-    <RelativeLayout
-        android:layout_width="fill_parent"
+    <ImageView
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_weight="3" >
-
-        <ImageView
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
-            android:scaleType="center"
-            android:src="@drawable/dinner_poto" />
-    </RelativeLayout>
+        android:contentDescription="@string/dinner"
+        android:src="@drawable/dinner_poto" />
     <!-- list -->
 
     <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="2"
+        android:layout_margin="0sp"
         android:orientation="vertical" >
 
         <ListView
@@ -69,8 +55,7 @@
 
     <LinearLayout
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="6"
+        android:layout_height="match_parent"
         android:background="@drawable/under_bar"
         android:orientation="horizontal" >
 
