@@ -11,7 +11,7 @@
     <string name="management">行程管理</string>
     <string name="more">更多服務</string>
     <string name="back">返回</string>
-    <string name="sure">確認</string>
+    <string name="confirm">確認</string>
     <string name="dinner">dinner</string>
 
 </resources>
