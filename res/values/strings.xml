@@ -13,5 +13,6 @@
     <string name="back">返回</string>
     <string name="confirm">確認</string>
     <string name="dinner">dinner</string>
+    <string name="input_booking">輸入訂位代號</string>
 
 </resources>

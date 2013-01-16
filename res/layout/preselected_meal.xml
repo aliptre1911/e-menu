@@ -1,14 +1,14 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:background="@drawable/p480x800"
-    android:orientation="vertical"
+    android:background="@drawable/bg"
     tools:context=".MainActivity" >
 
     <!-- 頁首 -->
 
     <RelativeLayout
+        android:id="@+id/relativeLayout1"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/top_u_01" >
@@ -21,6 +21,7 @@
             android:layout_marginLeft="5sp"
             android:background="@drawable/btn_mainmenu"
             android:gravity="center"
+            android:onClick="back"
             android:text="@string/back"
             android:textColor="#FFFFFF"
             android:textSize="12sp" />
@@ -46,9 +47,32 @@
             android:textSize="12sp" />
     </RelativeLayout>
 
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" >
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/relativeLayout1"
+        android:background="@drawable/dinner_top_s" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="@string/input_booking"
+            android:textColor="#ffffff"
+            android:textSize="20sp" />
+    </RelativeLayout>
+
     <LinearLayout
         android:layout_width="fill_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
         android:background="@drawable/under_bar"
         android:baselineAligned="true"
         android:orientation="horizontal" >
@@ -56,7 +80,8 @@
         <LinearLayout
             android:id="@+id/schedule"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="fill_parent"
+            android:layout_gravity="center"
             android:layout_weight="1"
             android:orientation="vertical" >
 
@@ -65,6 +90,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
+                android:layout_marginTop="3sp"
                 android:clickable="true"
                 android:contentDescription="@string/schedule"
                 android:scaleType="center"
@@ -82,7 +108,8 @@
         <LinearLayout
             android:id="@+id/flightDynamics"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="fill_parent"
+            android:layout_gravity="center"
             android:layout_weight="1"
             android:orientation="vertical" >
 
@@ -91,6 +118,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
+                android:layout_marginTop="3sp"
                 android:clickable="true"
                 android:contentDescription="@string/flightDynamics"
                 android:scaleType="center"
@@ -108,7 +136,8 @@
         <LinearLayout
             android:id="@+id/boarding"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="fill_parent"
+            android:layout_gravity="center"
             android:layout_weight="1"
             android:orientation="vertical" >
 
@@ -117,6 +146,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
+                android:layout_marginTop="3sp"
                 android:clickable="true"
                 android:contentDescription="@string/boarding"
                 android:scaleType="center"
@@ -134,7 +164,8 @@
         <LinearLayout
             android:id="@+id/management"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="fill_parent"
+            android:layout_gravity="center"
             android:layout_weight="1"
             android:orientation="vertical" >
 
@@ -143,6 +174,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
+                android:layout_marginTop="3sp"
                 android:clickable="true"
                 android:contentDescription="@string/management"
                 android:scaleType="center"
@@ -160,7 +192,8 @@
         <LinearLayout
             android:id="@+id/more"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="fill_parent"
+            android:layout_gravity="center"
             android:layout_weight="1"
             android:orientation="vertical" >
 
@@ -169,6 +202,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
+                android:layout_marginTop="3sp"
                 android:clickable="true"
                 android:contentDescription="@string/more"
                 android:scaleType="center"
@@ -184,4 +218,4 @@
         </LinearLayout>
     </LinearLayout>
 
-</LinearLayout>
+</RelativeLayout>
