@@ -14,5 +14,8 @@
     <string name="confirm">確認</string>
     <string name="dinner">dinner</string>
     <string name="input_booking">輸入訂位代號</string>
-
+    <string name="booking_number">訂位代號</string>
+    <string name="last_name">姓(英文)</string>
+    <string name="name">名(英文)</string>
+    <string name="input_prompt">字母間請勿加空白或特殊符號</string>
 </resources>

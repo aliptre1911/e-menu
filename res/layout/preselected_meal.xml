@@ -1,7 +1,8 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout 
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
     android:background="@drawable/bg"
     tools:context=".MainActivity" >
 
@@ -47,12 +48,10 @@
             android:textSize="12sp" />
     </RelativeLayout>
 
-    <RelativeLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" >
-    </RelativeLayout>
+    <!-- 輸入代號 -->
 
     <RelativeLayout
+        android:id="@+id/layout_input_booking"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
@@ -67,6 +66,91 @@
             android:textColor="#ffffff"
             android:textSize="20sp" />
     </RelativeLayout>
+
+    <!-- 輸入 -->
+
+    <RelativeLayout
+        android:id="@+id/layout_input"
+        android:layout_width="fill_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/layout_input_booking" >
+
+        <TextView
+            android:id="@+id/tv_booking_nubmer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/et_booking_number"
+            android:layout_below="@+id/layout_input"
+            android:layout_marginTop="20sp"
+            android:text="@string/booking_number"
+            android:textSize="16sp" />
+
+        <EditText
+            android:id="@+id/et_booking_number"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_booking_nubmer"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="3sp"
+            android:background="@drawable/et_bg"
+            android:ems="10"
+            android:hint="" >
+        </EditText>
+
+        <TextView
+            android:id="@+id/tv_last_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/et_booking_number"
+            android:layout_below="@+id/et_booking_number"
+            android:layout_marginTop="20sp"
+            android:text="@string/last_name"
+            android:textSize="16sp" />
+
+        <EditText
+            android:id="@+id/et_last_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/tv_last_name"
+            android:layout_below="@+id/tv_last_name"
+            android:layout_marginTop="3sp"
+            android:background="@drawable/et_bg"
+            android:ems="10"
+            android:hint="" />
+
+        <TextView
+            android:id="@+id/tv_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/et_last_name"
+            android:layout_below="@+id/et_last_name"
+            android:layout_marginTop="20sp"
+            android:text="@string/name"
+            android:textSize="16sp" />
+
+        <EditText
+            android:id="@+id/et_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/tv_name"
+            android:layout_below="@+id/tv_name"
+            android:layout_marginTop="3sp"
+            android:background="@drawable/et_bg"
+            android:ems="10"
+            android:hint="" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/et_name"
+            android:layout_below="@+id/et_name"
+            android:layout_marginLeft="3sp"
+            android:layout_marginTop="3sp"
+            android:text="@string/input_prompt"
+            android:textSize="12sp" />
+    </RelativeLayout>
+
+    <!-- 頁尾 -->
 
     <LinearLayout
         android:layout_width="fill_parent"
