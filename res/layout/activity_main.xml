@@ -84,7 +84,7 @@
                 android:clickable="true"
                 android:contentDescription="@string/schedule"
                 android:scaleType="center"
-                android:src="@drawable/under_icon_05" />
+                android:src="@drawable/btn_under_05" />
 
             <TextView
                 android:id="@+id/tv_schedule"
@@ -112,7 +112,7 @@
                 android:clickable="true"
                 android:contentDescription="@string/flightDynamics"
                 android:scaleType="center"
-                android:src="@drawable/under_icon_04" />
+                android:src="@drawable/btn_under_04" />
 
             <TextView
                 android:id="@+id/tv_flightDynamics"
@@ -140,7 +140,7 @@
                 android:clickable="true"
                 android:contentDescription="@string/boarding"
                 android:scaleType="center"
-                android:src="@drawable/under_icon_03" />
+                android:src="@drawable/btn_under_03" />
 
             <TextView
                 android:id="@+id/tv_boarding"
@@ -168,7 +168,7 @@
                 android:clickable="true"
                 android:contentDescription="@string/management"
                 android:scaleType="center"
-                android:src="@drawable/under_icon_02" />
+                android:src="@drawable/btn_under_02" />
 
             <TextView
                 android:id="@+id/tv_management"
@@ -196,7 +196,7 @@
                 android:clickable="true"
                 android:contentDescription="@string/more"
                 android:scaleType="center"
-                android:src="@drawable/under_icon_01" />
+                android:src="@drawable/btn_under_01" />
 
             <TextView
                 android:id="@+id/tv_more"

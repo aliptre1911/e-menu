@@ -33,19 +33,6 @@
             android:text="@string/preselectedMeals"
             android:textColor="#FFFFFF"
             android:textSize="24sp" />
-
-        <Button
-            android:id="@+id/btn_confirm"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:layout_centerVertical="true"
-            android:layout_marginRight="5sp"
-            android:background="@drawable/btn_confirm"
-            android:onClick="confirm"
-            android:text="@string/confirm"
-            android:textColor="#FFFFFF"
-            android:textSize="12sp" />
     </RelativeLayout>
 
     <!-- 輸入代號 -->
@@ -62,7 +49,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
-            android:text="@string/input_booking"
+            android:text="@string/select_order_flight"
             android:textColor="#ffffff"
             android:textSize="20sp" />
     </RelativeLayout>
@@ -70,84 +57,55 @@
     <!-- 輸入 -->
 
     <RelativeLayout
-        android:id="@+id/layout_input"
         android:layout_width="fill_parent"
         android:layout_height="match_parent"
-        android:layout_below="@+id/layout_input_booking" >
+        android:layout_below="@+id/layout_input_booking"
+        android:layout_centerHorizontal="true" >
 
         <TextView
-            android:id="@+id/tv_booking_nubmer"
+            android:id="@+id/tv_flight_number"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignLeft="@+id/et_booking_number"
-            android:layout_below="@+id/layout_input"
-            android:layout_marginTop="20sp"
-            android:text="@string/booking_number"
-            android:textSize="16sp" />
-
-        <EditText
-            android:id="@+id/et_booking_number"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/tv_booking_nubmer"
+            android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="3sp"
-            android:background="@drawable/et_bg"
-            android:ems="10"
-            android:hint="" >
-        </EditText>
-
-        <TextView
-            android:id="@+id/tv_last_name"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignLeft="@+id/et_booking_number"
-            android:layout_below="@+id/et_booking_number"
+            android:layout_marginLeft="20sp"
+            android:layout_marginRight="35sp"
             android:layout_marginTop="20sp"
-            android:text="@string/last_name"
-            android:textSize="16sp" />
-
-        <EditText
-            android:id="@+id/et_last_name"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignLeft="@+id/tv_last_name"
-            android:layout_below="@+id/tv_last_name"
-            android:layout_marginTop="3sp"
-            android:background="@drawable/et_bg"
-            android:ems="10"
-            android:hint="" />
+            android:text="@string/flight_number"
+            android:textSize="18sp" />
 
         <TextView
-            android:id="@+id/tv_name"
+            android:id="@+id/tv_departure_date"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignLeft="@+id/et_last_name"
-            android:layout_below="@+id/et_last_name"
-            android:layout_marginTop="20sp"
-            android:text="@string/name"
-            android:textSize="16sp" />
-
-        <EditText
-            android:id="@+id/et_name"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignLeft="@+id/tv_name"
-            android:layout_below="@+id/tv_name"
-            android:layout_marginTop="3sp"
-            android:background="@drawable/et_bg"
-            android:ems="10"
-            android:hint="" />
+            android:layout_alignBaseline="@+id/tv_flight_number"
+            android:layout_alignBottom="@+id/tv_flight_number"
+            android:layout_toLeftOf="@+id/tv_flight_number"
+            android:text="@string/departure_date"
+            android:textSize="18sp" />
 
         <TextView
+            android:id="@+id/tv_stroke"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignLeft="@+id/et_name"
-            android:layout_below="@+id/et_name"
-            android:layout_marginLeft="3sp"
-            android:layout_marginTop="3sp"
-            android:text="@string/input_prompt"
-            android:textSize="12sp" />
+            android:layout_alignBaseline="@+id/tv_flight_number"
+            android:layout_alignBottom="@+id/tv_flight_number"
+            android:layout_toRightOf="@+id/tv_flight_number"
+            android:text="@string/stroke"
+            android:textSize="18sp" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_flight_number"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="5sp"
+            android:src="@drawable/blue_line" />
+
+        <ListView
+            android:id="@+id/list_flight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
     </RelativeLayout>
 
     <!-- 頁尾 -->
