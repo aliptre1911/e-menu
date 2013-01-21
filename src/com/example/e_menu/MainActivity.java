@@ -46,17 +46,14 @@ public class MainActivity extends Activity {
 			case 0:
 				// 預選餐點
 				intent.setClass(MainActivity.this, preselectedActivity.class);
+				startActivity(intent);
 				break;
 			case 1:
 				// 訂餐明細
-				intent.setClass(MainActivity.this, preselectedActivity.class);
-				break;
 			case 2:
 				// 瀏覽菜單
-				intent.setClass(MainActivity.this, preselectedActivity.class);
 				break;
 			}
-			startActivity(intent);
 		}
 	};
 }

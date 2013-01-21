@@ -54,7 +54,6 @@
             android:textSize="20sp" />
     </RelativeLayout>
 
-    <!-- 輸入 -->
 
     <RelativeLayout
         android:layout_width="fill_parent"
