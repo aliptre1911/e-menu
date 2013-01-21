@@ -1,6 +1,7 @@
 package com.example.e_menu;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -39,6 +40,16 @@ public class flightAdapter extends BaseAdapter {
 	public View getView(int position, View convertView, ViewGroup parent) {
 		// TODO Auto-generated method stub
 		MyView view = null;
+		// 預定時間
+		int departure_y = Integer.parseInt(list[position][0].split("-")[0]);
+		int departure_m = Integer.parseInt(list[position][0].split("-")[1]);
+		int departure_d = Integer.parseInt(list[position][0].split("-")[2]);
+		// 現在時間
+		String now_date = "2012-09-15";
+		String now_time = "10:20";
+		int now_y = Integer.parseInt(now_date.split("-")[0]);
+		int now_m = Integer.parseInt(now_date.split("-")[1]);
+		int now_d = Integer.parseInt(now_date.split("-")[2]);
 
 		if (convertView == null) {
 			convertView = myInflater.inflate(R.layout.flight_adapter, null);
@@ -54,6 +65,12 @@ public class flightAdapter extends BaseAdapter {
 			view = (MyView) convertView.getTag();
 		}
 
+		if (diffTime(departure_y, now_y) <= 0
+				&& diffTime(departure_m, now_m) <= 0
+				&& diffTime(departure_d, now_d) <= 0) {
+			view.setColor(Color.BLUE);
+		}
+
 		view.departureDate.setText(list[position][0]);
 		view.departureTime.setText(list[position][1]);
 		view.flight_number.setText(list[position][2]);
@@ -61,6 +78,10 @@ public class flightAdapter extends BaseAdapter {
 		view.strokeSeat.setText(list[position][4]);
 
 		return convertView;
+	}
+
+	private int diffTime(int a, int b) {
+		return a - b;
 	}
 
 	class MyView {
@@ -76,6 +97,14 @@ public class flightAdapter extends BaseAdapter {
 			this.flight_number = c;
 			this.stroke = d;
 			this.strokeSeat = e;
+		}
+
+		public void setColor(int colors) {
+			this.departureDate.setTextColor(colors);
+			this.departureTime.setTextColor(colors);
+			this.flight_number.setTextColor(colors);
+			this.stroke.setTextColor(colors);
+			this.strokeSeat.setTextColor(colors);
 		}
 	}
 }
