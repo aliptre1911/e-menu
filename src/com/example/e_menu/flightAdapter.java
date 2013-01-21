@@ -44,9 +44,8 @@ public class flightAdapter extends BaseAdapter {
 		int departure_y = Integer.parseInt(list[position][0].split("-")[0]);
 		int departure_m = Integer.parseInt(list[position][0].split("-")[1]);
 		int departure_d = Integer.parseInt(list[position][0].split("-")[2]);
-		// 現在時間
+		// 假設現在時間
 		String now_date = "2012-09-15";
-		String now_time = "10:20";
 		int now_y = Integer.parseInt(now_date.split("-")[0]);
 		int now_m = Integer.parseInt(now_date.split("-")[1]);
 		int now_d = Integer.parseInt(now_date.split("-")[2]);

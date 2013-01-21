@@ -33,81 +33,139 @@
             android:text="@string/preselectedMeals"
             android:textColor="#FFFFFF"
             android:textSize="24sp" />
+
+        <Button
+            android:id="@+id/btn_confirm"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="5sp"
+            android:background="@drawable/btn_confirm"
+            android:onClick="confirm"
+            android:text="@string/next"
+            android:textColor="#FFFFFF"
+            android:textSize="12sp" />
     </RelativeLayout>
 
     <!-- 輸入代號 -->
 
-    <RelativeLayout
-        android:id="@+id/layout_input_booking"
+    <TableLayout
+        android:id="@+id/layout_data"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
         android:layout_below="@+id/relativeLayout1"
-        android:background="@drawable/dinner_top_s" >
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
-            android:text="@string/select_order_flight"
-            android:textColor="#ffffff"
-            android:textSize="20sp" />
-    </RelativeLayout>
-
-    <TableLayout
-        android:id="@+id/layout_flight_title"
-        android:layout_width="fill_parent"
-        android:layout_height="match_parent"
-        android:layout_below="@+id/layout_input_booking"
-        android:layout_marginTop="15sp"
-        android:stretchColumns="0,1,2,3,4" >
+        android:background="@drawable/dinner_top"
+        android:stretchColumns="0,1" >
 
         <TableRow>
 
-            <TextView />
+            <TextView
+                android:id="@+id/tv_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:id="@+id/tv_seat_number"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </TableRow>
+
+        <TableRow>
+
+            <TextView
+                android:id="@+id/tv_seat"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
 
             <TextView
                 android:id="@+id/tv_departure_date"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:text="@string/departure_date"
-                android:textSize="16sp" />
+                android:layout_height="wrap_content" />
+        </TableRow>
 
-            <TextView
-                android:id="@+id/tv_flight_number"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:text="@string/flight_number"
-                android:textSize="16sp" />
+        <TableRow>
 
             <TextView
                 android:id="@+id/tv_stroke"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:text="@string/stroke"
-                android:textSize="16sp" />
-
-            <TextView />
+                android:layout_height="wrap_content" />
         </TableRow>
-
-        <ImageView
-            android:id="@+id/blue_line"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10sp"
-            android:src="@drawable/blue_line" />
-
-        <ListView
-            android:id="@+id/list_flight"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="15sp"
-            android:cacheColorHint="#00000000" />
     </TableLayout>
 
+    <LinearLayout
+        android:id="@+id/layout01"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/layout_data"
+        android:background="@drawable/dinner_br01"
+        android:orientation="vertical" >
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="奧克蘭(AKL) - 布里斯本(BNE)" />
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="商務艙便餐(MCC001342)至2012-09-30截止" />
+    </LinearLayout>
+
+    <RadioGroup
+        android:id="@+id/mainDinner"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/layout01"
+        android:orientation="vertical" >
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="薑味醬汁紐西蘭紅魚佐芥蘭、香菇、紅蘿蔔及米飯" />
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="香煎牛菲力佐綜合蔬菜、玉米洋芋蓉及綠胡椒醬" />
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="功夫雞-法式低溫油煮佐彩椒、節瓜、蘆筍、紅蘿蔔、義式墩飯餅及奶油蘑菇醬" />
+    </RadioGroup>
+
+    <LinearLayout
+        android:id="@+id/layout02"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/mainDinner"
+        android:background="@drawable/dinner_br01"
+        android:orientation="vertical" >
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="布里斯本(BNE) - 台北(桃園)(TPE)" />
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="商務艙便餐(MCC001342)至2012-09-30截止" />
+    </LinearLayout>
+
+    <RadioGroup
+        android:id="@+id/pairDinner"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/layout02"
+        android:orientation="vertical" >
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="辣味香橙蝦仁干貝佐青花菜、紅蘿蔔、香菇及黃金炒飯" />
+    </RadioGroup>
     <!-- 頁尾 -->
 
     <LinearLayout
