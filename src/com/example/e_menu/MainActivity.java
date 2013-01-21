@@ -25,6 +25,7 @@ public class MainActivity extends Activity {
 		findview();
 		init();
 	}
+	
 
 	private void findview() {
 		list = (ListView) findViewById(R.id.list);

@@ -45,29 +45,37 @@ public class flightAdapter extends BaseAdapter {
 
 			view = new MyView(
 					(TextView) convertView.findViewById(R.id.a_departure_date),
+					(TextView) convertView.findViewById(R.id.a_departure_time),
 					(TextView) convertView.findViewById(R.id.a_flight_number),
-					(TextView) convertView.findViewById(R.id.a_stroke));
+					(TextView) convertView.findViewById(R.id.a_stroke),
+					(TextView) convertView.findViewById(R.id.a_stroke_seat));
 			convertView.setTag(view);
 		} else {
 			view = (MyView) convertView.getTag();
 		}
 
 		view.departureDate.setText(list[position][0]);
-		view.flight_number.setText(list[position][1]);
-		view.stroke.setText(list[position][2]);
+		view.departureTime.setText(list[position][1]);
+		view.flight_number.setText(list[position][2]);
+		view.stroke.setText(list[position][3]);
+		view.strokeSeat.setText(list[position][4]);
 
 		return convertView;
 	}
 
 	class MyView {
 		TextView departureDate;
+		TextView departureTime;
 		TextView flight_number;
 		TextView stroke;
+		TextView strokeSeat;
 
-		public MyView(TextView a, TextView b, TextView c) {
+		public MyView(TextView a, TextView b, TextView c, TextView d, TextView e) {
 			this.departureDate = a;
-			this.flight_number = b;
-			this.stroke = c;
+			this.departureTime = b;
+			this.flight_number = c;
+			this.stroke = d;
+			this.strokeSeat = e;
 		}
 	}
 }

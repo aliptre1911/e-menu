@@ -1,36 +1,60 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="fill_parent"
-    android:background="@drawable/bg_list" >
+    android:layout_below="@+id/layout_input_booking"
+    android:layout_marginTop="15sp"
+    android:stretchColumns="0,1,2,3,4" >
 
-    <TextView
-        android:id="@+id/tv_flight_number"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginLeft="20sp"
-        android:layout_marginRight="35sp"
-        android:layout_marginTop="20sp"
-        android:textSize="18sp" />
+    <TableRow>
 
-    <TextView
-        android:id="@+id/tv_departure_date"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/tv_flight_number"
-        android:layout_alignBottom="@+id/tv_flight_number"
-        android:layout_toLeftOf="@+id/tv_flight_number"
-        android:textSize="18sp" />
+        <TextView />
 
-    <TextView
-        android:id="@+id/tv_stroke"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/tv_flight_number"
-        android:layout_alignBottom="@+id/tv_flight_number"
-        android:layout_toRightOf="@+id/tv_flight_number"
-        android:textSize="18sp" />
+        <TextView
+            android:id="@+id/a_departure_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textSize="18sp" />
 
-</RelativeLayout>
+        <TextView
+            android:id="@+id/a_flight_number"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/a_stroke"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textSize="18sp" />
+
+        <TextView />
+    </TableRow>
+
+    <TableRow>
+
+        <TextView />
+
+        <TextView
+            android:id="@+id/a_departure_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textSize="18sp" />
+
+        <TextView />
+
+        <TextView
+            android:id="@+id/a_stroke_seat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textSize="18sp" />
+
+        <TextView />
+    </TableRow>
+
+</TableLayout>
