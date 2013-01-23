@@ -70,38 +70,49 @@
             android:background="@drawable/dinner_top"
             android:stretchColumns="0,1" >
 
-            <TableRow>
+            <TableRow
+                android:layout_marginLeft="5sp"
+                android:layout_marginTop="5sp" >
 
                 <TextView
                     android:id="@+id/tv_name"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:textSize="16sp" />
 
                 <TextView
                     android:id="@+id/tv_seat_number"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:textSize="16sp" />
             </TableRow>
 
-            <TableRow>
+            <TableRow
+                android:layout_marginLeft="5sp"
+                android:layout_marginTop="5sp" >
 
                 <TextView
                     android:id="@+id/tv_seat"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:textSize="16sp" />
 
                 <TextView
                     android:id="@+id/tv_departure_date"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:textSize="16sp" />
             </TableRow>
 
-            <TableRow>
+            <TableRow
+                android:layout_marginLeft="5sp"
+                android:layout_marginTop="5sp" >
 
                 <TextView
                     android:id="@+id/tv_stroke"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:textSize="16sp" />
             </TableRow>
         </TableLayout>
     </LinearLayout>
@@ -122,11 +133,13 @@
             <TextView
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="5sp"
                 android:text="奧克蘭(AKL) - 布里斯本(BNE)" />
 
             <TextView
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="5sp"
                 android:text="商務艙便餐(MCC001342)至2012-09-30截止" />
         </LinearLayout>
     </LinearLayout>
@@ -176,11 +189,13 @@
             <TextView
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="5sp"
                 android:text="布里斯本(BNE) - 台北(桃園)(TPE)" />
 
             <TextView
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="5sp"
                 android:text="商務艙便餐(MCC001342)至2012-09-30截止" />
         </LinearLayout>
     </LinearLayout>

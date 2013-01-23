@@ -34,20 +34,21 @@ public class orderDinner extends Activity {
 	}
 
 	private void init() {
-//		bData = this.getIntent().getExtras();
-//		// 文字顏色
-//		tv_name.setTextColor(Color.WHITE);
-//		tv_seat_number.setTextColor(Color.WHITE);
-//		tv_seat.setTextColor(Color.WHITE);
-//		tv_departure_date.setTextColor(Color.WHITE);
-//		tv_storke.setTextColor(Color.rgb(255, 255, 120));
-//		// 內容
-//		tv_name.setText(this.name);
-//		tv_departure_date.setText(bData.getStringArray("data")[0]);
-//		tv_seat_number.setText(bData.getStringArray("data")[2]);
-//		tv_seat.setText(bData.getStringArray("data")[4]);
-//		tv_storke.setText(this.storke);
-		// { "2012-09-15", "10:35", "CI0054", "AKLTPE", "商務艙" 
+		bData = this.getIntent().getExtras();
+		// 文字顏色
+		tv_name.setTextColor(Color.WHITE);
+		tv_seat_number.setTextColor(Color.WHITE);
+		tv_seat.setTextColor(Color.WHITE);
+		tv_departure_date.setTextColor(Color.WHITE);
+		tv_storke.setTextColor(Color.rgb(255, 255, 120));
+		// 內容
+		tv_name.setText(this.name);
+		tv_departure_date.setText("出發日期：" + bData.getStringArray("data")[0]);
+		tv_seat_number.setText("訂位代號：KJQ801");
+		tv_seat.setText(bData.getStringArray("data")[2] + " "
+				+ bData.getStringArray("data")[4]);
+		tv_storke.setText(this.storke);
+		// { "2012-09-15", "10:35", "CI0054", "AKLTPE", "商務艙"
 	}
 
 	private void findview() {

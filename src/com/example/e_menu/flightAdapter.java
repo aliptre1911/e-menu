@@ -12,7 +12,7 @@ public class flightAdapter extends BaseAdapter {
 
 	private LayoutInflater myInflater;
 	private String[][] list = null;
-
+	
 	public flightAdapter(Context ctxt, String[][] list) {
 		myInflater = LayoutInflater.from(ctxt);
 		this.list = list;

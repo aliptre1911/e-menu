@@ -38,6 +38,7 @@ public class orderFlight extends Activity {
 				intent.setClass(orderFlight.this, orderDinner.class);
 				// ¥]»q¸ê®Æ
 				bundle.putStringArray("data", data[position]);
+				intent.putExtras(bundle);
 				startActivity(intent);
 			} catch (Exception e) {
 				e.printStackTrace();
