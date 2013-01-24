@@ -147,30 +147,14 @@
     <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="0dp"
-        android:layout_weight="3"
+        android:layout_weight="4"
         android:orientation="horizontal" >
 
-        <RadioGroup
-            android:id="@+id/mainDinner"
+        <ListView
+            android:id="@+id/mainDinnerList"
             android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical" >
-
-            <RadioButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="薑味醬汁紐西蘭紅魚佐芥蘭、香菇、紅蘿蔔及米飯" />
-
-            <RadioButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="香煎牛菲力佐綜合蔬菜、玉米洋芋蓉及綠胡椒醬" />
-
-            <RadioButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="功夫雞-法式低溫油煮佐彩椒、節瓜、蘆筍、紅蘿蔔、義式墩飯餅及奶油蘑菇醬" />
-        </RadioGroup>
+            android:layout_height="fill_parent"
+            android:cacheColorHint="#00000000" />
     </LinearLayout>
 
     <LinearLayout
@@ -206,17 +190,11 @@
         android:layout_weight="1"
         android:orientation="horizontal" >
 
-        <RadioGroup
-            android:id="@+id/pairDinner"
+        <ListView
+            android:id="@+id/pairDinnerList"
             android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical" >
-
-            <RadioButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="辣味香橙蝦仁干貝佐青花菜、紅蘿蔔、香菇及黃金炒飯" />
-        </RadioGroup>
+            android:layout_height="fill_parent"
+            android:cacheColorHint="#00000000" />
     </LinearLayout>
     <!-- 頁尾 -->
 
