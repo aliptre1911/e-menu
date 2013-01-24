@@ -49,7 +49,7 @@
                 android:layout_centerVertical="true"
                 android:layout_marginRight="5sp"
                 android:background="@drawable/btn_confirm"
-                android:onClick="confirm"
+                android:onClick="next"
                 android:text="@string/next"
                 android:textColor="#FFFFFF"
                 android:textSize="12sp" />

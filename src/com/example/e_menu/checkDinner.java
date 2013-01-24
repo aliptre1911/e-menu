@@ -11,7 +11,7 @@ import android.view.Window;
 import android.widget.ListView;
 import android.widget.TextView;
 
-public class orderDinner extends Activity {
+public class checkDinner extends Activity {
 	TextView tv_name;
 	TextView tv_seat_number;
 	TextView tv_seat;
@@ -66,15 +66,10 @@ public class orderDinner extends Activity {
 	}
 
 	public void next(View v) {
-		Bundle bundle = new Bundle();
-		bundle.putString("mainDinner", mainList.get(mainDinnerList.getId()));
-		bundle.putString("pairDinner", pairList.get(pairDinnerList.getId()));
-		bundle.putStringArray("data", bData.getStringArray("data"));
 		Intent intent = new Intent();
 		intent.setClass(this, checkDinner.class);
-		intent.putExtras(bundle);
 	}
-
+	
 	private void arrayPushDatatoList(ArrayList<String> list, String arr[]) {
 		for (String data : arr)
 			list.add(data);
