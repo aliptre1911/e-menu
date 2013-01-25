@@ -46,17 +46,21 @@ public class MainActivity extends Activity {
 			switch ((int) id) {
 			case 0:
 				// 預選餐點
- 				titleBar = dinnerMenu.selected ? "訂餐明細" : "預選餐點";
+ 				titleBar = dinnerMenu.selected ? listValue[0] : listValue[1];
 				intent.setClass(MainActivity.this, preselectedActivity.class);
 				startActivity(intent);
 				break;
 			case 1:
 				// 訂餐明細
-				titleBar = "訂餐明細";
+				titleBar = listValue[1];
 				intent.setClass(MainActivity.this, preselectedActivity.class);
 				startActivity(intent);
+				break;
 			case 2:
 				// 瀏覽菜單
+				titleBar = listValue[2];
+				intent.setClass(MainActivity.this, browseMenuActivity.class);
+				startActivity(intent);
 				break;
 			}
 		}
