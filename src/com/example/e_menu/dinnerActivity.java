@@ -1,12 +1,12 @@
 package com.example.e_menu;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
 import android.widget.TextView;
-import android.widget.Toast;
 
 public class dinnerActivity extends Activity {
 	TextView tv_name;
@@ -31,6 +31,18 @@ public class dinnerActivity extends Activity {
 
 	public void back(View v) {
 		this.finish();
+	}
+
+	public void resetDinner(View v) {
+		dinnerMenu.resetDinner();
+		dinnerActivity.this.finish();
+		startActivity(new Intent(dinnerActivity.this, orderDinner.class));
+	}
+
+	public void cancleDinner(View v) {
+		dinnerMenu.resetDinner();
+		dinnerActivity.this.finish();
+		startActivity(new Intent(dinnerActivity.this, orderFlight.class));
 	}
 
 	private void init() {

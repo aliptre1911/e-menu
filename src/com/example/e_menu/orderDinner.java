@@ -20,9 +20,6 @@ public class orderDinner extends Activity {
 	TextView tv_storke;
 	ListView mainDinnerList;
 	ListView pairDinnerList;
-	String name = "Mary Lin";
-	String storke = "AKL-BNE-TPE";
-	String bookingClass = "KJQ801";
 	Bundle bData;
 	ArrayList<String> mainList;
 	ArrayList<String> pairList;
@@ -37,22 +34,11 @@ public class orderDinner extends Activity {
 		setContentView(R.layout.order_dinner);
 		orderdinnerLayout = this;
 		findview();
-		getBundleData();
 		init();
 	}
 
 	public void back(View v) {
 		this.finish();
-	}
-
-	private void getBundleData() {
-		bData = this.getIntent().getExtras();
-		passengerInfomation.name = this.name;
-		passengerInfomation.date = bData.getStringArray("data")[0];
-		passengerInfomation.seat_number = bData.getStringArray("data")[2];
-		passengerInfomation.seat = bData.getStringArray("data")[4];
-		passengerInfomation.stroke = this.storke;
-		passengerInfomation.bookingClass = this.bookingClass;
 	}
 
 	private void init() {

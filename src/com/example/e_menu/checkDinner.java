@@ -95,6 +95,8 @@ public class checkDinner extends Activity {
 				dinnerMenu.selected = true;
 				// finish¿ï¾ÜÀ\ÂI
 				orderDinner.orderdinnerLayout.finish();
+				// finish orderflight
+				orderFlight.orderflight.finish();
 				// finish this
 				checkDinner.this.finish();
 				// startActivity
@@ -104,7 +106,7 @@ public class checkDinner extends Activity {
 			}
 		});
 		dialog.setContentView(layout);
-		dialog.getWindow().setLayout(400, 400);
+		dialog.getWindow().setLayout(400, 320);
 		dialog.getWindow().setBackgroundDrawableResource(
 				android.R.color.transparent);
 		return dialog;
