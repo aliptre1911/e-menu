@@ -8,9 +8,9 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.view.Window;
-import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.TextView;
 
@@ -50,6 +50,36 @@ public class dinnerActivity extends Activity {
 		dialog.show();
 	}
 
+	private Dialog getOKDialog(String message) {
+		final Dialog dialog = new Dialog(this);
+		Context mContext = getApplicationContext();
+		LayoutInflater inflater = (LayoutInflater) mContext
+				.getSystemService(LAYOUT_INFLATER_SERVICE);
+		View layout = inflater.inflate(R.layout.dialog,
+				(ViewGroup) findViewById(R.id.layout_dialog));
+		// textview
+		TextView dialog_message = (TextView) layout
+				.findViewById(R.id.dialog_message);
+		dialog_message.setText(message);
+		// button
+		Button dialog_ok = (Button) layout.findViewById(R.id.dialog_ok);
+		dialog_ok.setOnClickListener(new OnClickListener() {
+
+			@Override
+			public void onClick(View arg0) {
+				// TODO Auto-generated method stub
+				dinnerMenu.resetDinner();
+				dinnerActivity.this.finish();
+				startActivity(new Intent(dinnerActivity.this, orderFlight.class));
+			}
+		});
+		dialog.setContentView(layout);
+		dialog.getWindow().setLayout(400, 480);
+		dialog.getWindow().setBackgroundDrawableResource(
+				android.R.color.transparent);
+		return dialog;
+	}
+
 	private Dialog getOKCancleDialog(String message) {
 		final Dialog dialog = new Dialog(this);
 		Context mContext = getApplicationContext();
@@ -69,10 +99,8 @@ public class dinnerActivity extends Activity {
 			@Override
 			public void onClick(View arg0) {
 				// TODO Auto-generated method stub
-				dinnerMenu.resetDinner();
-				dinnerActivity.this.finish();
-				startActivity(new Intent(dinnerActivity.this, orderFlight.class));
-
+				Dialog dialogOK =getOKDialog("餐點已取消");
+				dialogOK.show();
 			}
 		});
 
