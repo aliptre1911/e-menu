@@ -10,7 +10,6 @@ import android.widget.ListView;
 import android.widget.AdapterView.OnItemClickListener;
 
 public class orderFlight extends Activity {
-	static orderFlight orderflightLayout;
 	private ListView listview;
 	// 10:35 15:20 °Ó°È¿µ
 	private String[][] data = {
@@ -22,7 +21,6 @@ public class orderFlight extends Activity {
 		super.onCreate(savedInstanceState);
 		this.requestWindowFeature(Window.FEATURE_NO_TITLE);
 		setContentView(R.layout.order_flight);
-		orderflightLayout = this;
 		findView();
 		init();
 	}

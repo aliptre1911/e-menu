@@ -22,6 +22,7 @@ public class orderDinner extends Activity {
 	ListView pairDinnerList;
 	String name = "Mary Lin";
 	String storke = "AKL-BNE-TPE";
+	String bookingClass = "KJQ801";
 	Bundle bData;
 	ArrayList<String> mainList;
 	ArrayList<String> pairList;
@@ -36,6 +37,7 @@ public class orderDinner extends Activity {
 		setContentView(R.layout.order_dinner);
 		orderdinnerLayout = this;
 		findview();
+		getBundleData();
 		init();
 	}
 
@@ -43,8 +45,18 @@ public class orderDinner extends Activity {
 		this.finish();
 	}
 
-	private void init() {
+	private void getBundleData() {
 		bData = this.getIntent().getExtras();
+		passengerInfomation.name = this.name;
+		passengerInfomation.date = bData.getStringArray("data")[0];
+		passengerInfomation.seat_number = bData.getStringArray("data")[2];
+		passengerInfomation.seat = bData.getStringArray("data")[4];
+		passengerInfomation.stroke = this.storke;
+		passengerInfomation.bookingClass = this.bookingClass;
+	}
+
+	private void init() {
+
 		// 文字顏色
 		tv_name.setTextColor(Color.WHITE);
 		tv_seat_number.setTextColor(Color.WHITE);
@@ -52,12 +64,12 @@ public class orderDinner extends Activity {
 		tv_departure_date.setTextColor(Color.WHITE);
 		tv_storke.setTextColor(Color.rgb(255, 255, 120));
 		// 內容
-		tv_name.setText(this.name);
-		tv_departure_date.setText("出發日期：" + bData.getStringArray("data")[0]);
-		tv_seat_number.setText("訂位代號：KJQ801");
-		tv_seat.setText(bData.getStringArray("data")[2] + " "
-				+ bData.getStringArray("data")[4]);
-		tv_storke.setText(this.storke);
+		tv_name.setText(passengerInfomation.name);
+		tv_departure_date.setText("出發日期：" + passengerInfomation.date);
+		tv_seat_number.setText("訂位代號：" + passengerInfomation.bookingClass);
+		tv_seat.setText(passengerInfomation.seat_number + " "
+				+ passengerInfomation.seat);
+		tv_storke.setText(passengerInfomation.stroke);
 		// list
 		mainList = new ArrayList<String>();
 		pairList = new ArrayList<String>();
@@ -73,7 +85,6 @@ public class orderDinner extends Activity {
 				((itemAdapter) mainDinnerList.getAdapter()).getDinnerName());
 		bundle.putString("pairDinner",
 				((itemAdapter) pairDinnerList.getAdapter()).getDinnerName());
-		bundle.putStringArray("data", bData.getStringArray("data"));
 		Intent intent = new Intent();
 		intent.setClass(this, checkDinner.class);
 		intent.putExtras(bundle);
