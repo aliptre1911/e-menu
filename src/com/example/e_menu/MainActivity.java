@@ -46,7 +46,7 @@ public class MainActivity extends Activity {
 			switch ((int) id) {
 			case 0:
 				// 預選餐點
-				titleBar = dinnerMenu.selected ? "訂餐明細" : "預選餐點";
+ 				titleBar = dinnerMenu.selected ? "訂餐明細" : "預選餐點";
 				intent.setClass(MainActivity.this, preselectedActivity.class);
 				startActivity(intent);
 				break;
