@@ -1,11 +1,17 @@
 package com.example.e_menu;
 
 import android.app.Activity;
+import android.app.Dialog;
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.view.Window;
+import android.view.View.OnClickListener;
+import android.widget.Button;
 import android.widget.TextView;
 
 public class dinnerActivity extends Activity {
@@ -40,9 +46,49 @@ public class dinnerActivity extends Activity {
 	}
 
 	public void cancleDinner(View v) {
-		dinnerMenu.resetDinner();
-		dinnerActivity.this.finish();
-		startActivity(new Intent(dinnerActivity.this, orderFlight.class));
+		final Dialog dialog = getOKCancleDialog("將取消此次航班所有餐點");
+		dialog.show();
+	}
+
+	private Dialog getOKCancleDialog(String message) {
+		final Dialog dialog = new Dialog(this);
+		Context mContext = getApplicationContext();
+		LayoutInflater inflater = (LayoutInflater) mContext
+				.getSystemService(LAYOUT_INFLATER_SERVICE);
+		View layout = inflater.inflate(R.layout.ok_cancle_dialog,
+				(ViewGroup) findViewById(R.id.layout_okcancledialog));
+		// textview
+		TextView dialog_message = (TextView) layout
+				.findViewById(R.id.dialog_message);
+		dialog_message.setText(message);
+		// button
+		Button dialog_ok = (Button) layout.findViewById(R.id.dialog_ok);
+		Button dialog_cancle = (Button) layout.findViewById(R.id.dialog_cancle);
+		dialog_ok.setOnClickListener(new OnClickListener() {
+
+			@Override
+			public void onClick(View arg0) {
+				// TODO Auto-generated method stub
+				dinnerMenu.resetDinner();
+				dinnerActivity.this.finish();
+				startActivity(new Intent(dinnerActivity.this, orderFlight.class));
+
+			}
+		});
+
+		dialog_cancle.setOnClickListener(new OnClickListener() {
+
+			@Override
+			public void onClick(View arg0) {
+				// TODO Auto-generated method stub
+				dialog.dismiss();
+			}
+		});
+		dialog.setContentView(layout);
+		dialog.getWindow().setLayout(400, 480);
+		dialog.getWindow().setBackgroundDrawableResource(
+				android.R.color.transparent);
+		return dialog;
 	}
 
 	private void init() {

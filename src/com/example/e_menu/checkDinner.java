@@ -106,7 +106,7 @@ public class checkDinner extends Activity {
 			}
 		});
 		dialog.setContentView(layout);
-		dialog.getWindow().setLayout(400, 320);
+		dialog.getWindow().setLayout(400, 480);
 		dialog.getWindow().setBackgroundDrawableResource(
 				android.R.color.transparent);
 		return dialog;
