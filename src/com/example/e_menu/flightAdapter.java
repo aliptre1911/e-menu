@@ -67,7 +67,7 @@ public class flightAdapter extends BaseAdapter {
 		// 24hr以內，文字為藍色
 		if (diffTime(departure_y, now_y) <= 0
 				&& diffTime(departure_m, now_m) <= 0
-				&& diffTime(departure_d, now_d) <= 0 && dinner.isSelected) {
+				&& diffTime(departure_d, now_d) <= 0 && dinnerMenu.selected) {
 			view.setColor(Color.rgb(40, 70, 160));
 		}
 

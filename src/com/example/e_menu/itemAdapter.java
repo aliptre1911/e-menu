@@ -10,6 +10,7 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.RadioButton;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class itemAdapter extends BaseAdapter {
 
@@ -17,6 +18,7 @@ public class itemAdapter extends BaseAdapter {
 	private ArrayList<String> list = null;
 	private int selectedIndex;
 	private String indexArr[] = new String[26];
+	public String dinner;
 
 	public itemAdapter(Context ctxt, ArrayList<String> list, int selectedIndex) {
 		myInflater = LayoutInflater.from(ctxt);
@@ -49,7 +51,6 @@ public class itemAdapter extends BaseAdapter {
 	public View getView(final int position, View convertView, ViewGroup parent) {
 		// TODO Auto-generated method stub
 		MyView holder;
-
 		if (convertView == null) {
 			convertView = myInflater.inflate(R.layout.item, null);
 			holder = new MyView(
@@ -60,10 +61,6 @@ public class itemAdapter extends BaseAdapter {
 		} else {
 			holder = (MyView) convertView.getTag();
 		}
-
-		// set text
-		holder.item_no.setText(indexArr[position]);
-		holder.item.setText(list.get(position));
 
 		// ¿ï¨ú
 		holder.itemBtn.setChecked(position == selectedIndex ? true : false);
@@ -76,7 +73,16 @@ public class itemAdapter extends BaseAdapter {
 				itemAdapter.this.notifyDataSetChanged();
 			}
 		});
+
+		this.dinner = indexArr[selectedIndex] + list.get(selectedIndex);
+		// set text
+		holder.item_no.setText(indexArr[position]);
+		holder.item.setText(list.get(position));
 		return convertView;
+	}
+
+	public String getDinnerName() {
+		return this.dinner;
 	}
 
 	class MyView {
