@@ -40,15 +40,6 @@ public class flightAdapter extends BaseAdapter {
 	public View getView(int position, View convertView, ViewGroup parent) {
 		// TODO Auto-generated method stub
 		MyView view = null;
-		// 預定時間
-		int departure_y = Integer.parseInt(list[position][0].split("-")[0]);
-		int departure_m = Integer.parseInt(list[position][0].split("-")[1]);
-		int departure_d = Integer.parseInt(list[position][0].split("-")[2]);
-		// 假設現在時間
-		String now_date = "2012-09-15";
-		int now_y = Integer.parseInt(now_date.split("-")[0]);
-		int now_m = Integer.parseInt(now_date.split("-")[1]);
-		int now_d = Integer.parseInt(now_date.split("-")[2]);
 
 		if (convertView == null) {
 			convertView = myInflater.inflate(R.layout.flight_adapter, null);
@@ -63,11 +54,17 @@ public class flightAdapter extends BaseAdapter {
 		} else {
 			view = (MyView) convertView.getTag();
 		}
-
+		// 預定時間
+		int departure_y = Integer.parseInt(list[position][0].split("-")[0]);
+		int departure_m = Integer.parseInt(list[position][0].split("-")[1]);
+		int departure_d = Integer.parseInt(list[position][0].split("-")[2]);
 		// 24hr以內，文字為藍色
-		if (diffTime(departure_y, now_y) <= 0
-				&& diffTime(departure_m, now_m) <= 0
-				&& diffTime(departure_d, now_d) <= 0 && dinnerMenu.selected) {
+		if (passengerInfomation
+				.diffTime(departure_y, passengerInfomation.now_y) <= 0
+				&& passengerInfomation.diffTime(departure_m,
+						passengerInfomation.now_m) <= 0
+				&& passengerInfomation.diffTime(departure_d,
+						passengerInfomation.now_d) <= 0 && dinnerMenu.selected) {
 			view.setColor(Color.rgb(40, 70, 160));
 		}
 
@@ -76,12 +73,8 @@ public class flightAdapter extends BaseAdapter {
 		view.flight_number.setText(list[position][2]);
 		view.stroke.setText(list[position][3]);
 		view.strokeSeat.setText(list[position][4]);
-		
-		return convertView;
-	}
 
-	private int diffTime(int a, int b) {
-		return a - b;
+		return convertView;
 	}
 
 	class MyView {

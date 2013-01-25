@@ -38,18 +38,37 @@ public class orderFlight extends Activity {
 			// TODO Auto-generated method stub
 			try {
 				Intent intent = new Intent();
-				if (!dinnerMenu.selected) {
-					// 設定activity
-					intent.setClass(orderFlight.this, orderDinner.class);
-				} else {
-					intent.setClass(orderFlight.this, dinnerActivity.class);
-				}
 				passengerInfomation.name = orderFlight.this.name;
 				passengerInfomation.date = data[position][0];
 				passengerInfomation.seat_number = data[position][2];
 				passengerInfomation.seat = data[position][4];
 				passengerInfomation.stroke = orderFlight.this.storke;
 				passengerInfomation.bookingClass = orderFlight.this.bookingClass;
+				passengerInfomation.departure_d = Integer
+						.parseInt(passengerInfomation.date.split("-")[0]);
+				passengerInfomation.departure_d = Integer
+						.parseInt(passengerInfomation.date.split("-")[1]);
+				passengerInfomation.departure_d = Integer
+						.parseInt(passengerInfomation.date.split("-")[2]);
+				
+				if (!dinnerMenu.selected) {
+					// 設定activity
+					intent.setClass(orderFlight.this, orderDinner.class);
+				} else if (passengerInfomation.diffTime(
+						passengerInfomation.departure_y,
+						passengerInfomation.now_y) <= 0
+						&& passengerInfomation.diffTime(
+								passengerInfomation.departure_m,
+								passengerInfomation.now_m) <= 0
+						&& passengerInfomation.diffTime(
+								passengerInfomation.departure_d,
+								passengerInfomation.now_d) <= 0
+						&& dinnerMenu.selected) {
+					intent.setClass(orderFlight.this,
+							timeOutDinnerActivity.class);
+				} else {
+					intent.setClass(orderFlight.this, dinnerActivity.class);
+				}
 
 				startActivity(intent);
 			} catch (Exception e) {
