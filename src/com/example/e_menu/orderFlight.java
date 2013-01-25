@@ -8,6 +8,7 @@ import android.view.Window;
 import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.AdapterView.OnItemClickListener;
+import android.widget.Toast;
 
 public class orderFlight extends Activity {
 	static orderFlight orderflight;
@@ -30,6 +31,11 @@ public class orderFlight extends Activity {
 		init();
 	}
 
+	protected void onRestart() {
+		super.onRestart();
+		((flightAdapter)listview.getAdapter()).notifyDataSetChanged();
+	}
+
 	OnItemClickListener listener = new OnItemClickListener() {
 
 		@Override
@@ -50,7 +56,7 @@ public class orderFlight extends Activity {
 						.parseInt(passengerInfomation.date.split("-")[1]);
 				passengerInfomation.departure_d = Integer
 						.parseInt(passengerInfomation.date.split("-")[2]);
-				
+
 				if (!dinnerMenu.selected) {
 					// ³]©wactivity
 					intent.setClass(orderFlight.this, orderDinner.class);

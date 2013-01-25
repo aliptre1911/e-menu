@@ -95,13 +95,25 @@ public class checkDinner extends Activity {
 				dinnerMenu.selected = true;
 				// finish¿ï¾ÜÀ\ÂI
 				orderDinner.orderdinnerLayout.finish();
-				// finish orderflight
-				orderFlight.orderflight.finish();
 				// finish this
 				checkDinner.this.finish();
 				// startActivity
 				Intent intent = new Intent();
-				intent.setClass(checkDinner.this, dinnerActivity.class);
+				if (passengerInfomation.diffTime(
+						passengerInfomation.departure_y,
+						passengerInfomation.now_y) <= 0
+						&& passengerInfomation.diffTime(
+								passengerInfomation.departure_m,
+								passengerInfomation.now_m) <= 0
+						&& passengerInfomation.diffTime(
+								passengerInfomation.departure_d,
+								passengerInfomation.now_d) <= 0
+						&& dinnerMenu.selected) {
+					intent.setClass(checkDinner.this,
+							timeOutDinnerActivity.class);
+				} else {
+					intent.setClass(checkDinner.this, dinnerActivity.class);
+				}
 				startActivity(intent);
 			}
 		});
