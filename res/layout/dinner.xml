@@ -33,10 +33,11 @@
                 android:textSize="12sp" />
 
             <TextView
+                android:id="@+id/titleBar"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerInParent="true"
-                android:text="@string/preselectedMeals"
+                android:text="@string/orderingDetails"
                 android:textColor="#FFFFFF"
                 android:textSize="24sp" />
         </RelativeLayout>

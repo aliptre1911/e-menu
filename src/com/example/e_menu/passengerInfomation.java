@@ -20,4 +20,16 @@ public class passengerInfomation {
 	public static int diffTime(int a, int b) {
 		return a - b;
 	}
+
+	public static boolean isTimeOut() {
+
+		return passengerInfomation.diffTime(passengerInfomation.departure_y,
+				passengerInfomation.now_y) <= 0
+				&& passengerInfomation.diffTime(
+						passengerInfomation.departure_m,
+						passengerInfomation.now_m) <= 0
+				&& passengerInfomation.diffTime(
+						passengerInfomation.departure_d,
+						passengerInfomation.now_d) <= 0 && dinnerMenu.selected;
+	}
 }

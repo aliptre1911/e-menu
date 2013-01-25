@@ -90,25 +90,21 @@ public class checkDinner extends Activity {
 			@Override
 			public void onClick(View arg0) {
 				// TODO Auto-generated method stub
+				MainActivity.titleBar = "­qÀ\©ú²Ó";
 				dinnerMenu.mainDinner = bData.getString("mainDinner");
 				dinnerMenu.pairDinner = bData.getString("pairDinner");
 				dinnerMenu.selected = true;
 				// finish¿ï¾ÜÀ\ÂI
 				orderDinner.orderdinnerLayout.finish();
+				// finish flight
+				orderFlight.orderflight.finish();
+				// finish preselected
+				preselectedActivity.preselected.finish();
 				// finish this
 				checkDinner.this.finish();
 				// startActivity
 				Intent intent = new Intent();
-				if (passengerInfomation.diffTime(
-						passengerInfomation.departure_y,
-						passengerInfomation.now_y) <= 0
-						&& passengerInfomation.diffTime(
-								passengerInfomation.departure_m,
-								passengerInfomation.now_m) <= 0
-						&& passengerInfomation.diffTime(
-								passengerInfomation.departure_d,
-								passengerInfomation.now_d) <= 0
-						&& dinnerMenu.selected) {
+				if (passengerInfomation.isTimeOut()) {
 					intent.setClass(checkDinner.this,
 							timeOutDinnerActivity.class);
 				} else {

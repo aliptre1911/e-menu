@@ -16,6 +16,7 @@ public class MainActivity extends Activity {
 	// 清單選項圖片
 	protected int[] listImg = { R.drawable.list_icon01, R.drawable.list_icon02,
 			R.drawable.list_icon03 };
+	public static String titleBar;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -25,7 +26,6 @@ public class MainActivity extends Activity {
 		findview();
 		init();
 	}
-	
 
 	private void findview() {
 		list = (ListView) findViewById(R.id.list);
@@ -46,11 +46,15 @@ public class MainActivity extends Activity {
 			switch ((int) id) {
 			case 0:
 				// 預選餐點
+				titleBar = dinnerMenu.selected ? "訂餐明細" : "預選餐點";
 				intent.setClass(MainActivity.this, preselectedActivity.class);
 				startActivity(intent);
 				break;
 			case 1:
 				// 訂餐明細
+				titleBar = "訂餐明細";
+				intent.setClass(MainActivity.this, preselectedActivity.class);
+				startActivity(intent);
 			case 2:
 				// 瀏覽菜單
 				break;

@@ -25,6 +25,7 @@
     <string name="cancle">取消</string>
     <string name="next">下一步</string>
     <string name="cancleDinner">取消訂餐</string>
+    <string name="orderingDetails">訂餐明細</string>
     <string name="resetDinner">重新選擇</string>
     <string name="timeout">在起飛前24小時之內已不可取消或修改餐點</string>
 

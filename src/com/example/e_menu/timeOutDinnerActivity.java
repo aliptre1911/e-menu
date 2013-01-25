@@ -24,7 +24,7 @@ public class timeOutDinnerActivity extends Activity {
 	TextView tv_pairDinner;
 	TextView tv_no_main_dinner;
 	TextView tv_no_pair_dinner;
-	Bundle bData;
+	TextView titleBar;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -57,6 +57,7 @@ public class timeOutDinnerActivity extends Activity {
 		tv_mainDinner.setText(dinnerMenu.mainDinner.split("\\.")[1]);
 		tv_no_pair_dinner.setText(dinnerMenu.pairDinner.split("\\.")[0] + ".");
 		tv_pairDinner.setText(dinnerMenu.pairDinner.split("\\.")[1]);
+		titleBar.setText(MainActivity.titleBar);
 	}
 
 	private void findview() {
@@ -69,5 +70,6 @@ public class timeOutDinnerActivity extends Activity {
 		tv_pairDinner = (TextView) findViewById(R.id.tv_pairDinner);
 		tv_no_main_dinner = (TextView) findViewById(R.id.tv_no_main_dinner);
 		tv_no_pair_dinner = (TextView) findViewById(R.id.tv_no_pair_dinner);
+		titleBar = (TextView) findViewById(R.id.titleBar);
 	}
 }

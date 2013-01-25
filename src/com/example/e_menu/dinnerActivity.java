@@ -24,6 +24,7 @@ public class dinnerActivity extends Activity {
 	TextView tv_pairDinner;
 	TextView tv_no_main_dinner;
 	TextView tv_no_pair_dinner;
+	TextView titleBar;
 	Bundle bData;
 
 	@Override
@@ -69,8 +70,9 @@ public class dinnerActivity extends Activity {
 			public void onClick(View arg0) {
 				// TODO Auto-generated method stub
 				dinnerMenu.resetDinner();
+				orderFlight.orderflight.finish();
+				preselectedActivity.preselected.finish();
 				dinnerActivity.this.finish();
-				startActivity(new Intent(dinnerActivity.this, orderFlight.class));
 			}
 		});
 		dialog.setContentView(layout);
@@ -137,6 +139,7 @@ public class dinnerActivity extends Activity {
 		tv_mainDinner.setText(dinnerMenu.mainDinner.split("\\.")[1]);
 		tv_no_pair_dinner.setText(dinnerMenu.pairDinner.split("\\.")[0] + ".");
 		tv_pairDinner.setText(dinnerMenu.pairDinner.split("\\.")[1]);
+		titleBar.setText(MainActivity.titleBar);
 	}
 
 	private void findview() {
@@ -149,5 +152,6 @@ public class dinnerActivity extends Activity {
 		tv_pairDinner = (TextView) findViewById(R.id.tv_pairDinner);
 		tv_no_main_dinner = (TextView) findViewById(R.id.tv_no_main_dinner);
 		tv_no_pair_dinner = (TextView) findViewById(R.id.tv_no_pair_dinner);
+		titleBar = (TextView) findViewById(R.id.titleBar);
 	}
 }

@@ -6,13 +6,14 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
 import android.widget.AdapterView;
-import android.widget.ListView;
 import android.widget.AdapterView.OnItemClickListener;
-import android.widget.Toast;
+import android.widget.ListView;
+import android.widget.TextView;
 
 public class orderFlight extends Activity {
 	static orderFlight orderflight;
 	private ListView listview;
+	private TextView titleBar;
 	// 10:35 15:20 商務艙
 	private String[][] data = {
 			{ "2012-09-15", "10:35", "CI0054", "AKLTPE", "商務艙" },
@@ -29,11 +30,6 @@ public class orderFlight extends Activity {
 		this.orderflight = this;
 		findView();
 		init();
-	}
-
-	protected void onRestart() {
-		super.onRestart();
-		((flightAdapter)listview.getAdapter()).notifyDataSetChanged();
 	}
 
 	OnItemClickListener listener = new OnItemClickListener() {
@@ -60,16 +56,7 @@ public class orderFlight extends Activity {
 				if (!dinnerMenu.selected) {
 					// 設定activity
 					intent.setClass(orderFlight.this, orderDinner.class);
-				} else if (passengerInfomation.diffTime(
-						passengerInfomation.departure_y,
-						passengerInfomation.now_y) <= 0
-						&& passengerInfomation.diffTime(
-								passengerInfomation.departure_m,
-								passengerInfomation.now_m) <= 0
-						&& passengerInfomation.diffTime(
-								passengerInfomation.departure_d,
-								passengerInfomation.now_d) <= 0
-						&& dinnerMenu.selected) {
+				} else if (passengerInfomation.isTimeOut()) {
 					intent.setClass(orderFlight.this,
 							timeOutDinnerActivity.class);
 				} else {
@@ -85,11 +72,13 @@ public class orderFlight extends Activity {
 
 	private void findView() {
 		listview = (ListView) findViewById(R.id.list_flight);
+		titleBar = (TextView) findViewById(R.id.titleBar);
 	}
 
 	private void init() {
 		listview.setAdapter(new flightAdapter(this, data));
 		listview.setOnItemClickListener(listener);
+		titleBar.setText(MainActivity.titleBar);
 	}
 
 	public void back(View v) {
