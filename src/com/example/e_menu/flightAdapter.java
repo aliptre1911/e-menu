@@ -76,7 +76,7 @@ public class flightAdapter extends BaseAdapter {
 		view.flight_number.setText(list[position][2]);
 		view.stroke.setText(list[position][3]);
 		view.strokeSeat.setText(list[position][4]);
-
+		
 		return convertView;
 	}
 

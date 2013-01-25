@@ -220,52 +220,42 @@
     <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="0dp"
-        android:layout_weight="1"
+        android:layout_weight="2"
         android:orientation="horizontal" >
 
         <LinearLayout
-            android:id="@+id/layout02"
             android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/dinner_br01"
-            android:orientation="vertical" >
+            android:layout_height="fill_parent"
+            android:orientation="horizontal" >
 
-            <TextView
-                android:layout_width="fill_parent"
+            <Button
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="5sp"
-                android:text="布里斯本(BNE) - 台北(桃園)(TPE)" />
+                android:layout_gravity="center"
+                android:layout_marginLeft="30sp"
+                android:layout_marginRight="30sp"
+                android:layout_weight="1"
+                android:background="@drawable/btn_big"
+                android:gravity="center"
+                android:onClick="cancleDinner"
+                android:text="@string/cancleDinner"
+                android:textColor="#ffffff"
+                android:textSize="18sp" />
 
-            <TextView
-                android:layout_width="fill_parent"
+            <Button
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="5sp"
-                android:text="商務艙早餐(MCC001342)至2012-09-30截止" />
+                android:layout_gravity="center"
+                android:layout_marginLeft="30sp"
+                android:layout_marginRight="30sp"
+                android:layout_weight="1"
+                android:background="@drawable/btn_big"
+                android:gravity="center"
+                android:onClick="resetDinner"
+                android:text="@string/resetDinner"
+                android:textColor="#ffffff"
+                android:textSize="18sp" />
         </LinearLayout>
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="fill_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:orientation="horizontal" >
-
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="fill_parent"
-            android:layout_gravity="center_vertical"
-            android:layout_weight="2"
-            android:gravity="center"
-            android:text="C."
-            android:textSize="14sp" />
-
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="fill_parent"
-            android:layout_weight="9"
-            android:gravity="center_vertical"
-            android:text="炒蛋佐培根、菠菜、番茄、燭豆、洋芋球"
-            android:textSize="14sp" />
     </LinearLayout>
 
     <!-- 頁尾 -->
