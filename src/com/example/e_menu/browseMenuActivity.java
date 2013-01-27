@@ -4,6 +4,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
@@ -34,13 +35,14 @@ public class browseMenuActivity extends Activity {
 		this.requestWindowFeature(Window.FEATURE_NO_TITLE);
 		setContentView(R.layout.browse_menu);
 		setLocationView();
-		init();
+		listenerFlightBtn();
 	}
 
 	public void back(View v) {
 		this.finish();
 	}
 
+	// 砞竚ら戳
 	public void setDateTextView() {
 		tv_depatureDate = (TextView) findViewById(R.id.tv_departureDate);
 		tv_year = (TextView) findViewById(R.id.tv_year);
@@ -60,21 +62,27 @@ public class browseMenuActivity extends Activity {
 		tv_day.setText(days[now.getDay()]);
 	}
 
+	// 穝菏钮翴琩高礶じン
 	public void setLocationView() {
 		setDateTextView();
 		tv_selectPlaceOfDeparture = (TextView) findViewById(R.id.tv_selectPlaceOfDeparture);
-		tv_selectDestination = (TextView) findViewById(R.id.tv_selectDestination);		
+		tv_selectDestination = (TextView) findViewById(R.id.tv_selectDestination);
 		tv_selectPlaceOfDeparture.setTextColor(Color.rgb(150, 150, 150));
-		tv_selectDestination.setTextColor(Color.rgb(150, 150, 150));		
+		tv_selectDestination.setTextColor(Color.rgb(150, 150, 150));
+		query = (Button) findViewById(R.id.query);
+		query.setOnClickListener(locationListener);
 	}
 
+	// 穝菏钮痁琩高礶じン
 	public void setFlightView() {
 		setDateTextView();
 		tv_inputFlightNumber = (TextView) findViewById(R.id.tv_inputFlightNumber);
 		tv_inputFlightNumber.setTextColor(Color.rgb(150, 150, 150));
+		query = (Button) findViewById(R.id.query);
+		query.setOnClickListener(flightListener);
 	}
 
-	private void init() {
+	private void listenerFlightBtn() {
 		btn_flight = (Button) findViewById(R.id.btn_flight);
 		btn_flight.setOnClickListener(new OnClickListener() {
 			@Override
@@ -85,19 +93,14 @@ public class browseMenuActivity extends Activity {
 		});
 	}
 
+	// ち翴琩高礶
 	private void locationQuery() {
 		setContentView(R.layout.browse_menu);
 		setLocationView();
-		btn_flight = (Button) findViewById(R.id.btn_flight);
-		btn_flight.setOnClickListener(new OnClickListener() {
-			@Override
-			public void onClick(View arg0) {
-				// TODO Auto-generated method stub
-				flightQuery();
-			}
-		});
+		listenerFlightBtn();
 	}
 
+	// ち痁琩高礶
 	private void flightQuery() {
 		setContentView(R.layout.browse_menu_for_flight);
 		setFlightView();
@@ -110,4 +113,24 @@ public class browseMenuActivity extends Activity {
 			}
 		});
 	}
+
+	// 痁絪腹琩高
+	private OnClickListener flightListener = new OnClickListener() {
+		@Override
+		public void onClick(View arg0) {
+			// TODO Auto-generated method stub
+			startActivity(new Intent(browseMenuActivity.this,
+					MainActivity.class));
+		}
+	};
+	// 癬癢翴琩高
+	private OnClickListener locationListener = new OnClickListener() {
+		@Override
+		public void onClick(View arg0) {
+			// TODO Auto-generated method stub
+			startActivity(new Intent(browseMenuActivity.this,
+					MainActivity.class));
+		}
+	};
+
 }
