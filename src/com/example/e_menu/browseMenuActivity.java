@@ -15,6 +15,7 @@ import android.widget.TextView;
 public class browseMenuActivity extends Activity {
 	Button btn_location;
 	Button btn_flight;
+	Button query;
 
 	TextView tv_selectPlaceOfDeparture;
 	TextView tv_selectDestination;
@@ -22,6 +23,8 @@ public class browseMenuActivity extends Activity {
 	TextView tv_year;
 	TextView tv_day;
 	TextView tv_date;
+	TextView tv_inputFlightNumber;
+
 	String days[] = { "星期日", "星期一", "星期二", "星期三", "星期四", "星期五", "星期六" };
 	Date now;
 
@@ -30,7 +33,7 @@ public class browseMenuActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		this.requestWindowFeature(Window.FEATURE_NO_TITLE);
 		setContentView(R.layout.browse_menu);
-		findview();
+		setLocationView();
 		init();
 	}
 
@@ -38,38 +41,11 @@ public class browseMenuActivity extends Activity {
 		this.finish();
 	}
 
-	public void findview() {
-		btn_location = (Button) findViewById(R.id.btn_location);
-		btn_flight = (Button) findViewById(R.id.btn_flight);
-		tv_selectPlaceOfDeparture = (TextView) findViewById(R.id.tv_selectPlaceOfDeparture);
-		tv_selectDestination = (TextView) findViewById(R.id.tv_selectDestination);
+	public void setDateTextView() {
 		tv_depatureDate = (TextView) findViewById(R.id.tv_departureDate);
 		tv_year = (TextView) findViewById(R.id.tv_year);
 		tv_day = (TextView) findViewById(R.id.tv_day);
 		tv_date = (TextView) findViewById(R.id.tv_date);
-	}
-
-	public void init() {
-		btn_location.setTextColor(Color.rgb(255, 255, 255));
-		btn_flight.setTextColor(Color.rgb(50, 50, 50));
-		btn_flight.setOnClickListener(new OnClickListener() {
-			@Override
-			public void onClick(View arg0) {
-				// TODO Auto-generated method stub
-				setBlueBg(btn_flight);
-				setWhiteBg(btn_location);
-			}
-		});
-		btn_location.setOnClickListener(new OnClickListener() {
-			@Override
-			public void onClick(View arg0) {
-				// TODO Auto-generated method stub
-				setBlueBg(btn_location);
-				setWhiteBg(btn_flight);
-			}
-		});
-		tv_selectPlaceOfDeparture.setTextColor(Color.rgb(150, 150, 150));
-		tv_selectDestination.setTextColor(Color.rgb(150, 150, 150));
 		tv_depatureDate.setTextColor(Color.rgb(20, 20, 20));
 		tv_year.setTextColor(Color.rgb(0, 60, 120));
 		tv_day.setTextColor(Color.rgb(0, 60, 120));
@@ -84,13 +60,54 @@ public class browseMenuActivity extends Activity {
 		tv_day.setText(days[now.getDay()]);
 	}
 
-	private void setBlueBg(Button v) {
-		v.setBackgroundResource(R.drawable.plan4);
-		v.setTextColor(Color.rgb(255, 255, 255));
+	public void setLocationView() {
+		setDateTextView();
+		tv_selectPlaceOfDeparture = (TextView) findViewById(R.id.tv_selectPlaceOfDeparture);
+		tv_selectDestination = (TextView) findViewById(R.id.tv_selectDestination);		
+		tv_selectPlaceOfDeparture.setTextColor(Color.rgb(150, 150, 150));
+		tv_selectDestination.setTextColor(Color.rgb(150, 150, 150));		
 	}
 
-	private void setWhiteBg(Button v) {
-		v.setBackgroundResource(R.drawable.plan5);
-		v.setTextColor(Color.rgb(50, 50, 50));
+	public void setFlightView() {
+		setDateTextView();
+		tv_inputFlightNumber = (TextView) findViewById(R.id.tv_inputFlightNumber);
+		tv_inputFlightNumber.setTextColor(Color.rgb(150, 150, 150));
+	}
+
+	private void init() {
+		btn_flight = (Button) findViewById(R.id.btn_flight);
+		btn_flight.setOnClickListener(new OnClickListener() {
+			@Override
+			public void onClick(View arg0) {
+				// TODO Auto-generated method stub
+				flightQuery();
+			}
+		});
+	}
+
+	private void locationQuery() {
+		setContentView(R.layout.browse_menu);
+		setLocationView();
+		btn_flight = (Button) findViewById(R.id.btn_flight);
+		btn_flight.setOnClickListener(new OnClickListener() {
+			@Override
+			public void onClick(View arg0) {
+				// TODO Auto-generated method stub
+				flightQuery();
+			}
+		});
+	}
+
+	private void flightQuery() {
+		setContentView(R.layout.browse_menu_for_flight);
+		setFlightView();
+		btn_location = (Button) findViewById(R.id.btn_location);
+		btn_location.setOnClickListener(new OnClickListener() {
+			@Override
+			public void onClick(View arg0) {
+				// TODO Auto-generated method stub
+				locationQuery();
+			}
+		});
 	}
 }

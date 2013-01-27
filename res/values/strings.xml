@@ -37,5 +37,6 @@
     <string name="defaultYear">2012</string>
     <string name="defaultDay">星期四</string>
     <string name="defaultDate">11/22</string>
+    <string name="inputFlightNumber">請輸入航班編號</string>
 
 </resources>
