@@ -39,5 +39,7 @@
     <string name="defaultDate">11/22</string>
     <string name="inputFlightNumber">請輸入航班編號</string>
     <string name="browseMenu">瀏覽菜單</string>
+    <string name="flightNumber">航班編號</string>
+    <string name="meals">餐點</string>
 
 </resources>
