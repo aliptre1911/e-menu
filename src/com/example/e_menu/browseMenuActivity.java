@@ -1,5 +1,8 @@
 package com.example.e_menu;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 import android.app.Activity;
 import android.graphics.Color;
 import android.os.Bundle;
@@ -19,6 +22,8 @@ public class browseMenuActivity extends Activity {
 	TextView tv_year;
 	TextView tv_day;
 	TextView tv_date;
+	String days[] = { "星期日", "星期一", "星期二", "星期三", "星期四", "星期五", "星期六" };
+	Date now;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -65,10 +70,18 @@ public class browseMenuActivity extends Activity {
 		});
 		tv_selectPlaceOfDeparture.setTextColor(Color.rgb(150, 150, 150));
 		tv_selectDestination.setTextColor(Color.rgb(150, 150, 150));
-		tv_depatureDate.setTextColor(Color.rgb(20,20,20));
-		tv_year.setTextColor(Color.rgb(0,60,120));
-		tv_day.setTextColor(Color.rgb(0,60,120));
-		tv_date.setTextColor(Color.rgb(0,60,120));
+		tv_depatureDate.setTextColor(Color.rgb(20, 20, 20));
+		tv_year.setTextColor(Color.rgb(0, 60, 120));
+		tv_day.setTextColor(Color.rgb(0, 60, 120));
+		tv_date.setTextColor(Color.rgb(0, 60, 120));
+		// 取得現在時間
+		now = new Date();
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+		String dateArr[] = sdf.format(now).split("-");
+		// 填入
+		tv_year.setText(dateArr[0]);
+		tv_date.setText(dateArr[1] + "/" + dateArr[2]);
+		tv_day.setText(days[now.getDay()]);
 	}
 
 	private void setBlueBg(Button v) {
