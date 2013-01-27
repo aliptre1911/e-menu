@@ -38,5 +38,6 @@
     <string name="defaultDay">星期四</string>
     <string name="defaultDate">11/22</string>
     <string name="inputFlightNumber">請輸入航班編號</string>
+    <string name="browseMenu">瀏覽菜單</string>
 
 </resources>
