@@ -27,11 +27,11 @@
             android:textSize="12sp" />
 
         <TextView
+            android:id="@+id/titleBar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
             android:text="@string/preselectedMeals"
-            android:id="@+id/titleBar"
             android:textColor="#FFFFFF"
             android:textSize="24sp" />
 
@@ -117,7 +117,8 @@
             android:layout_marginTop="3sp"
             android:background="@drawable/et_bg"
             android:ems="10"
-            android:hint="" />
+            android:hint=""
+            android:text="Lin" />
 
         <TextView
             android:id="@+id/tv_name"
@@ -138,7 +139,8 @@
             android:layout_marginTop="3sp"
             android:background="@drawable/et_bg"
             android:ems="10"
-            android:hint="" />
+            android:hint=""
+            android:text="Marry" />
 
         <TextView
             android:layout_width="wrap_content"

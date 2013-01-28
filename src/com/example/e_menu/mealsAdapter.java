@@ -4,8 +4,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
@@ -43,10 +45,11 @@ public class mealsAdapter extends BaseAdapter {
 		return arg0;
 	}
 
+	static MyView view;
+
 	@Override
 	public View getView(int position, View convertView, ViewGroup parent) {
 		// TODO Auto-generated method stub
-		MyView view = null;
 
 		if (convertView == null) {
 			convertView = myInflater.inflate(R.layout.meals_adapter, null);
@@ -59,12 +62,16 @@ public class mealsAdapter extends BaseAdapter {
 		} else {
 			view = (MyView) convertView.getTag();
 		}
-		
+
 		view.flight.setText(flightNumberList.get(position));
 		view.time.setText(timeList.get(position));
 		view.meals.setText(mealsList.get(position));
-		
+
 		return convertView;
+	}
+
+	public static String getFlight() {
+		return view.flight.getText().toString();
 	}
 
 	class MyView {

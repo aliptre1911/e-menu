@@ -46,14 +46,24 @@ public class MainActivity extends Activity {
 			switch ((int) id) {
 			case 0:
 				// 預選餐點
- 				titleBar = dinnerMenu.selected ? listValue[0] : listValue[1];
-				intent.setClass(MainActivity.this, preselectedActivity.class);
+				titleBar = dinnerMenu.selected ? listValue[0] : listValue[1];
+				if (orderFlight.name != null && orderFlight.name != "") {
+					intent.setClass(MainActivity.this, orderFlight.class);
+				} else {
+					intent.setClass(MainActivity.this,
+							preselectedActivity.class);
+				}
 				startActivity(intent);
 				break;
 			case 1:
 				// 訂餐明細
 				titleBar = listValue[1];
-				intent.setClass(MainActivity.this, preselectedActivity.class);
+				if (orderFlight.name != null && orderFlight.name != "") {
+					intent.setClass(MainActivity.this, orderFlight.class);
+				} else {
+					intent.setClass(MainActivity.this,
+							preselectedActivity.class);
+				}
 				startActivity(intent);
 				break;
 			case 2:

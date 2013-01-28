@@ -18,7 +18,7 @@ public class orderFlight extends Activity {
 	private String[][] data = {
 			{ "2012-09-15", "10:35", "CI0054", "AKLTPE", "商務艙" },
 			{ "2012-09-19", "15:20", "CI0018", "TPEHNL", "商務艙" } };
-	String name = "Mary Lin";
+	static String name;
 	String storke = "AKL-BNE-TPE";
 	String bookingClass = "KJQ801";
 

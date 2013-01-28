@@ -119,6 +119,8 @@ public class browseMenuActivity extends Activity {
 		@Override
 		public void onClick(View arg0) {
 			// TODO Auto-generated method stub
+			startActivity(new Intent(browseMenuActivity.this,
+					browseMeals03.class));
 		}
 	};
 	// 起訖地點查詢

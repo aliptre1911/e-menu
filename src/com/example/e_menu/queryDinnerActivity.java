@@ -3,9 +3,12 @@ package com.example.e_menu;
 import java.util.ArrayList;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ListView;
 
 public class queryDinnerActivity extends Activity {
@@ -38,6 +41,27 @@ public class queryDinnerActivity extends Activity {
 			meals.add(arr[i][2]);
 		}
 		list.setAdapter(new mealsAdapter(this, flightNumber, time, meals));
+		list.setOnItemClickListener(new OnItemClickListener() {
+
+			@Override
+			public void onItemClick(AdapterView<?> parent, View view,
+					int position, long id) {
+				// TODO Auto-generated method stub
+				Intent intent = new Intent();
+				switch (position) {
+				case 0:
+					intent.setClass(queryDinnerActivity.this,
+							browseMeals01.class);
+					startActivity(intent);
+					break;
+				case 1:
+					intent.setClass(queryDinnerActivity.this,
+							browseMeals02.class);
+					startActivity(intent);
+					break;
+				}
+			}
+		});
 	}
 
 	private void findview() {
