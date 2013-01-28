@@ -96,6 +96,7 @@
                 android:layout_below="@+id/linearLayout1"
                 android:background="@drawable/dinner_br01"
                 android:gravity="center_vertical"
+                android:padding="3sp"
                 android:text=" 阿姆特斯丹(AMS) - 曼谷(BKK)\n 頭等艙本航段未提供預選餐點之服務\n頭等艙本航段未提供預選餐點之服務"
                 android:textColor="#000000" />
 
@@ -107,6 +108,7 @@
                 android:layout_below="@+id/linearLayout2"
                 android:background="@drawable/dinner_br01"
                 android:gravity="center_vertical"
+                android:padding="3sp"
                 android:text=" 曼谷(BKK) - 台北(桃園)(TPE)\n 頭等艙本航段未提供預選餐點之服務\n 商務艙便餐(MCC001343)至2012-09-30截止"
                 android:textColor="#000000" />
 

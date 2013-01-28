@@ -96,6 +96,7 @@
                 android:layout_below="@+id/linearLayout1"
                 android:background="@drawable/dinner_br01"
                 android:gravity="center_vertical"
+                android:padding="3sp"
                 android:text=" 奧克蘭(AKL)-布里斯本(BNE)\n 頭等艙本航段未提供預選餐點之服務\n 商務艙便餐(MCC001342)至2012-12-31截止"
                 android:textColor="#000000" />
 
@@ -198,6 +199,7 @@
                 android:layout_below="@+id/linearLayout2"
                 android:background="@drawable/dinner_br01"
                 android:gravity="center_vertical"
+                android:padding="3sp"
                 android:text=" 布里斯本(BNE)-台北(桃園)(TPE)\n 頭等艙本航段未提供預選餐點之服務\n 商務艙便餐(MCC001343)至2012-09-30截止"
                 android:textColor="#000000" />
 
