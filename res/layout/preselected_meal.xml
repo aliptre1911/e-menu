@@ -15,7 +15,7 @@
 
         <Button
             android:id="@+id/btn_mainMenu"
-            android:layout_width="wrap_content"
+            android:layout_width="70sp"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
             android:layout_marginLeft="5sp"
@@ -37,7 +37,7 @@
 
         <Button
             android:id="@+id/btn_confirm"
-            android:layout_width="wrap_content"
+            android:layout_width="70sp"
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
@@ -151,158 +151,171 @@
             android:layout_marginTop="3sp"
             android:text="@string/input_prompt"
             android:textSize="12sp" />
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:background="@drawable/under_bar_bg"
+            android:baselineAligned="true"
+            android:orientation="horizontal" >
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:background="@drawable/under_bar"
+                android:baselineAligned="false"
+                android:orientation="horizontal" >
+
+                <LinearLayout
+                    android:id="@+id/schedule"
+                    android:layout_width="0dp"
+                    android:layout_height="fill_parent"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:background="@drawable/item_bg"
+                    android:orientation="vertical" >
+
+                    <ImageView
+                        android:id="@+id/img_schedule"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="13sp"
+                        android:clickable="true"
+                        android:contentDescription="@string/schedule"
+                        android:scaleType="center"
+                        android:src="@drawable/btn_under_05" />
+
+                    <TextView
+                        android:id="@+id/tv_schedule"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="@string/schedule"
+                        android:textColor="#FFFFFF" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/flightDynamics"
+                    android:layout_width="0dp"
+                    android:layout_height="fill_parent"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:background="@drawable/item_bg"
+                    android:orientation="vertical" >
+
+                    <ImageView
+                        android:id="@+id/img_flightDynamics"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="13sp"
+                        android:clickable="true"
+                        android:contentDescription="@string/flightDynamics"
+                        android:scaleType="center"
+                        android:src="@drawable/btn_under_04" />
+
+                    <TextView
+                        android:id="@+id/tv_flightDynamics"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="@string/flightDynamics"
+                        android:textColor="#FFFFFF" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/boarding"
+                    android:layout_width="0dp"
+                    android:layout_height="fill_parent"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:background="@drawable/item_bg"
+                    android:orientation="vertical" >
+
+                    <ImageView
+                        android:id="@+id/img_boarding"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="13sp"
+                        android:clickable="true"
+                        android:contentDescription="@string/boarding"
+                        android:scaleType="center"
+                        android:src="@drawable/btn_under_03" />
+
+                    <TextView
+                        android:id="@+id/tv_boarding"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="@string/boarding"
+                        android:textColor="#FFFFFF" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/management"
+                    android:layout_width="0dp"
+                    android:layout_height="fill_parent"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:background="@drawable/item_bg"
+                    android:orientation="vertical" >
+
+                    <ImageView
+                        android:id="@+id/img_management"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="13sp"
+                        android:clickable="true"
+                        android:contentDescription="@string/management"
+                        android:scaleType="center"
+                        android:src="@drawable/btn_under_02" />
+
+                    <TextView
+                        android:id="@+id/tv_management"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="@string/management"
+                        android:textColor="#FFFFFF" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/more"
+                    android:layout_width="0dp"
+                    android:layout_height="fill_parent"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:background="@drawable/item_bg"
+                    android:orientation="vertical" >
+
+                    <ImageView
+                        android:id="@+id/img_more"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="13sp"
+                        android:clickable="true"
+                        android:contentDescription="@string/more"
+                        android:scaleType="center"
+                        android:src="@drawable/btn_under_01" />
+
+                    <TextView
+                        android:id="@+id/tv_more"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="@string/more"
+                        android:textColor="#FFFFFF" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
     </RelativeLayout>
 
     <!-- 頁尾 -->
-
-    <LinearLayout
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentLeft="true"
-        android:background="@drawable/under_bar"
-        android:baselineAligned="true"
-        android:orientation="horizontal" >
-
-        <LinearLayout
-            android:id="@+id/schedule"
-            android:layout_width="0dp"
-            android:layout_height="fill_parent"
-            android:layout_gravity="center"
-            android:layout_weight="1"
-            android:orientation="vertical" >
-
-            <ImageView
-                android:id="@+id/img_schedule"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginTop="3sp"
-                android:clickable="true"
-                android:contentDescription="@string/schedule"
-                android:scaleType="center"
-                android:src="@drawable/btn_under_05" />
-
-            <TextView
-                android:id="@+id/tv_schedule"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:text="@string/schedule"
-                android:textColor="#FFFFFF" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/flightDynamics"
-            android:layout_width="0dp"
-            android:layout_height="fill_parent"
-            android:layout_gravity="center"
-            android:layout_weight="1"
-            android:orientation="vertical" >
-
-            <ImageView
-                android:id="@+id/img_flightDynamics"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginTop="3sp"
-                android:clickable="true"
-                android:contentDescription="@string/flightDynamics"
-                android:scaleType="center"
-                android:src="@drawable/btn_under_04" />
-
-            <TextView
-                android:id="@+id/tv_flightDynamics"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:text="@string/flightDynamics"
-                android:textColor="#FFFFFF" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/boarding"
-            android:layout_width="0dp"
-            android:layout_height="fill_parent"
-            android:layout_gravity="center"
-            android:layout_weight="1"
-            android:orientation="vertical" >
-
-            <ImageView
-                android:id="@+id/img_boarding"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginTop="3sp"
-                android:clickable="true"
-                android:contentDescription="@string/boarding"
-                android:scaleType="center"
-                android:src="@drawable/btn_under_03" />
-
-            <TextView
-                android:id="@+id/tv_boarding"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:text="@string/boarding"
-                android:textColor="#FFFFFF" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/management"
-            android:layout_width="0dp"
-            android:layout_height="fill_parent"
-            android:layout_gravity="center"
-            android:layout_weight="1"
-            android:orientation="vertical" >
-
-            <ImageView
-                android:id="@+id/img_management"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginTop="3sp"
-                android:clickable="true"
-                android:contentDescription="@string/management"
-                android:scaleType="center"
-                android:src="@drawable/btn_under_02" />
-
-            <TextView
-                android:id="@+id/tv_management"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:text="@string/management"
-                android:textColor="#FFFFFF" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/more"
-            android:layout_width="0dp"
-            android:layout_height="fill_parent"
-            android:layout_gravity="center"
-            android:layout_weight="1"
-            android:orientation="vertical" >
-
-            <ImageView
-                android:id="@+id/img_more"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginTop="3sp"
-                android:clickable="true"
-                android:contentDescription="@string/more"
-                android:scaleType="center"
-                android:src="@drawable/btn_under_01" />
-
-            <TextView
-                android:id="@+id/tv_more"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:text="@string/more"
-                android:textColor="#FFFFFF" />
-        </LinearLayout>
-    </LinearLayout>
 
 </RelativeLayout>

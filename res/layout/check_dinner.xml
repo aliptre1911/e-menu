@@ -21,7 +21,7 @@
 
             <Button
                 android:id="@+id/btn_mainMenu"
-                android:layout_width="wrap_content"
+                android:layout_width="70sp"
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
                 android:layout_marginLeft="5sp"
@@ -42,11 +42,11 @@
 
             <Button
                 android:id="@+id/btn_confirm"
-                android:layout_width="wrap_content"
+                android:layout_width="70sp"
                 android:layout_height="wrap_content"
                 android:layout_alignParentRight="true"
                 android:layout_centerVertical="true"
-                android:layout_marginRight="5sp"
+                android:layout_marginRight="10sp"
                 android:background="@drawable/btn_confirm"
                 android:onClick="confirm"
                 android:text="@string/confirm"
@@ -125,6 +125,7 @@
             android:id="@+id/layout01"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="5sp"
             android:background="@drawable/dinner_br01"
             android:orientation="vertical" >
 
@@ -176,6 +177,7 @@
             android:id="@+id/layout02"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="5sp"
             android:background="@drawable/dinner_br01"
             android:orientation="vertical" >
 
@@ -220,6 +222,7 @@
     <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="0dp"
+        android:layout_marginTop="5sp"
         android:layout_weight="1"
         android:orientation="horizontal" >
 
@@ -273,13 +276,15 @@
     <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
+        android:background="@drawable/under_bar_bg"
+        android:baselineAligned="true"
         android:orientation="horizontal" >
 
         <LinearLayout
             android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="fill_parent"
             android:background="@drawable/under_bar"
-            android:baselineAligned="true"
+            android:baselineAligned="false"
             android:orientation="horizontal" >
 
             <LinearLayout
@@ -288,6 +293,7 @@
                 android:layout_height="fill_parent"
                 android:layout_gravity="center"
                 android:layout_weight="1"
+                android:background="@drawable/item_bg"
                 android:orientation="vertical" >
 
                 <ImageView
@@ -295,7 +301,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:layout_marginTop="3sp"
+                    android:layout_marginTop="13sp"
                     android:clickable="true"
                     android:contentDescription="@string/schedule"
                     android:scaleType="center"
@@ -316,6 +322,7 @@
                 android:layout_height="fill_parent"
                 android:layout_gravity="center"
                 android:layout_weight="1"
+                android:background="@drawable/item_bg"
                 android:orientation="vertical" >
 
                 <ImageView
@@ -323,7 +330,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:layout_marginTop="3sp"
+                    android:layout_marginTop="13sp"
                     android:clickable="true"
                     android:contentDescription="@string/flightDynamics"
                     android:scaleType="center"
@@ -344,6 +351,7 @@
                 android:layout_height="fill_parent"
                 android:layout_gravity="center"
                 android:layout_weight="1"
+                android:background="@drawable/item_bg"
                 android:orientation="vertical" >
 
                 <ImageView
@@ -351,7 +359,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:layout_marginTop="3sp"
+                    android:layout_marginTop="13sp"
                     android:clickable="true"
                     android:contentDescription="@string/boarding"
                     android:scaleType="center"
@@ -372,6 +380,7 @@
                 android:layout_height="fill_parent"
                 android:layout_gravity="center"
                 android:layout_weight="1"
+                android:background="@drawable/item_bg"
                 android:orientation="vertical" >
 
                 <ImageView
@@ -379,7 +388,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:layout_marginTop="3sp"
+                    android:layout_marginTop="13sp"
                     android:clickable="true"
                     android:contentDescription="@string/management"
                     android:scaleType="center"
@@ -400,6 +409,7 @@
                 android:layout_height="fill_parent"
                 android:layout_gravity="center"
                 android:layout_weight="1"
+                android:background="@drawable/item_bg"
                 android:orientation="vertical" >
 
                 <ImageView
@@ -407,7 +417,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:layout_marginTop="3sp"
+                    android:layout_marginTop="13sp"
                     android:clickable="true"
                     android:contentDescription="@string/more"
                     android:scaleType="center"

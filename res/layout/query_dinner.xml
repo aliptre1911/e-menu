@@ -21,7 +21,7 @@
 
             <Button
                 android:id="@+id/btn_mainMenu"
-                android:layout_width="wrap_content"
+                android:layout_width="70sp"
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
                 android:layout_marginLeft="5sp"
@@ -46,14 +46,104 @@
     <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="0dp"
-        android:layout_weight="1"
+        android:layout_weight="1.8"
+        android:layout_marginTop="3sp"
+        android:layout_marginBottom="3sp"
+        android:background="@drawable/time_topbar"
         android:orientation="horizontal" >
 
-        <ImageView
-            android:layout_width="match_parent"
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="5sp"
+            android:padding="5sp"
+            android:layout_weight="2"
+            android:orientation="vertical" >
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="0dp"
+                android:layout_gravity="center"
+                android:layout_weight="3"                android:background="@drawable/fly_time_1"
+                android:gravity="center"
+                android:text="2012"
+                android:textSize="14sp" />
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="0dp"
+                android:layout_gravity="center"
+                android:layout_weight="4"
+                android:background="@drawable/fly_time_2"
+                android:gravity="center"
+                android:text="12/06"
+                android:textColor="#ffffff"
+                android:textSize="20sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_marginTop="5sp"
-            android:src="@drawable/plan7" />
+            android:layout_marginLeft="20sp"
+            android:layout_marginRight="20sp"
+            android:layout_weight="5"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="0dp"
+                android:layout_marginTop="3sp"
+                android:layout_weight="1"
+                android:orientation="horizontal" >
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:src="@drawable/plan1814_up" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="10sp"
+                    android:gravity="center_horizontal"
+                    android:text="台北 TPE"
+                    android:textColor="#ffffff"
+                    android:textSize="20sp" />
+            </LinearLayout>
+
+            <ImageView
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/dinner_line" />
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:layout_marginBottom="3sp"
+                android:orientation="horizontal" >
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:src="@drawable/plan1814_down" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="10sp"
+                    android:gravity="center_horizontal"
+                    android:text="曼谷 BKK"
+                    android:textColor="#ffffff"
+                    android:textSize="20sp" />
+            </LinearLayout>
+        </LinearLayout>
     </LinearLayout>
 
     <LinearLayout
@@ -90,12 +180,13 @@
         <ImageView
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:src="@drawable/dinner_line1" />
+            android:scaleType="fitXY"
+            android:src="@drawable/dinner_line" />
 
         <ListView
             android:id="@+id/mealsList"
             android:layout_width="fill_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:cacheColorHint="#00000000" />
     </LinearLayout>
 
@@ -104,13 +195,15 @@
     <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
+        android:background="@drawable/under_bar_bg"
+        android:baselineAligned="true"
         android:orientation="horizontal" >
 
         <LinearLayout
             android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="fill_parent"
             android:background="@drawable/under_bar"
-            android:baselineAligned="true"
+            android:baselineAligned="false"
             android:orientation="horizontal" >
 
             <LinearLayout
@@ -119,6 +212,7 @@
                 android:layout_height="fill_parent"
                 android:layout_gravity="center"
                 android:layout_weight="1"
+                android:background="@drawable/item_bg"
                 android:orientation="vertical" >
 
                 <ImageView
@@ -126,7 +220,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:layout_marginTop="3sp"
+                    android:layout_marginTop="13sp"
                     android:clickable="true"
                     android:contentDescription="@string/schedule"
                     android:scaleType="center"
@@ -147,6 +241,7 @@
                 android:layout_height="fill_parent"
                 android:layout_gravity="center"
                 android:layout_weight="1"
+                android:background="@drawable/item_bg"
                 android:orientation="vertical" >
 
                 <ImageView
@@ -154,7 +249,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:layout_marginTop="3sp"
+                    android:layout_marginTop="13sp"
                     android:clickable="true"
                     android:contentDescription="@string/flightDynamics"
                     android:scaleType="center"
@@ -175,6 +270,7 @@
                 android:layout_height="fill_parent"
                 android:layout_gravity="center"
                 android:layout_weight="1"
+                android:background="@drawable/item_bg"
                 android:orientation="vertical" >
 
                 <ImageView
@@ -182,7 +278,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:layout_marginTop="3sp"
+                    android:layout_marginTop="13sp"
                     android:clickable="true"
                     android:contentDescription="@string/boarding"
                     android:scaleType="center"
@@ -203,6 +299,7 @@
                 android:layout_height="fill_parent"
                 android:layout_gravity="center"
                 android:layout_weight="1"
+                android:background="@drawable/item_bg"
                 android:orientation="vertical" >
 
                 <ImageView
@@ -210,7 +307,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:layout_marginTop="3sp"
+                    android:layout_marginTop="13sp"
                     android:clickable="true"
                     android:contentDescription="@string/management"
                     android:scaleType="center"
@@ -231,6 +328,7 @@
                 android:layout_height="fill_parent"
                 android:layout_gravity="center"
                 android:layout_weight="1"
+                android:background="@drawable/item_bg"
                 android:orientation="vertical" >
 
                 <ImageView
@@ -238,7 +336,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:layout_marginTop="3sp"
+                    android:layout_marginTop="13sp"
                     android:clickable="true"
                     android:contentDescription="@string/more"
                     android:scaleType="center"

@@ -7,7 +7,7 @@ import android.view.Window;
 
 public class browseMeals01 extends Activity {
 
-	@Override 
+	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		this.requestWindowFeature(Window.FEATURE_NO_TITLE);

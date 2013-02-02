@@ -22,7 +22,7 @@ public class orderDinner extends Activity {
 	ListView pairDinnerList;
 	Bundle bData;
 	ArrayList<String> mainList;
-	ArrayList<String> pairList;
+	ArrayList<String> pairList; 
 	String mainDinnerArray[] = { "薑味醬汁紐西蘭紅魚佐芥蘭、香菇、紅蘿蔔及米飯",
 			"香煎牛菲力佐綜合蔬菜、玉米洋芋蓉及綠胡椒醬", "功夫雞-法式低溫油煮佐彩椒、節瓜、蘆筍、紅蘿蔔、義式墩飯餅及奶油蘑菇醬" };
 	String pairDinnerArray[] = { "辣味香橙蝦仁干貝佐青花菜、紅蘿蔔、香菇及黃金炒飯" };
